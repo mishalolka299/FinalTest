@@ -21,8 +21,8 @@ public class AppDbContext : DbContext
             entity.Property(c => c.Color).HasMaxLength(50).IsRequired();
             entity.Property(c => c.VIN).HasMaxLength(17).IsRequired();
             entity.HasIndex(c => c.VIN).IsUnique();
-            entity.Property(c => c.Price).HasColumnType("decimal(18,2)");
-            entity.Property(c => c.Mileage).HasColumnType("decimal(18,2)");
+            entity.Property(c => c.Price);
+            entity.Property(c => c.Mileage);
         });
 
         modelBuilder.Entity<Customer>(entity =>
@@ -38,7 +38,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Sale>(entity =>
         {
             entity.HasKey(s => s.Id);
-            entity.Property(s => s.SalePrice).HasColumnType("decimal(18,2)");
+            entity.Property(s => s.SalePrice);
 
             entity.HasOne(s => s.Car)
                 .WithMany(c => c.Sales)
