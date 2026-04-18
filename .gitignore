@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.sln.DotSettings.user
+node_modules/
+dist/
+.env
+.env.local
+.DS_Store
+.vscode/
